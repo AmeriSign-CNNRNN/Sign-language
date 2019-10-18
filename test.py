@@ -92,10 +92,10 @@ for i in range(80,100,1):
                     opWrapper.emplaceAndPop([datum])
 
     # Display Image
-                    keypointdict['body keypoint'] = str(np.array(datum.poseKeypoints).tolist())
-                    keypointdict['Face keypoint'] = str(np.array(datum.faceKeypoints).tolist())
-                    keypointdict['Left hand keypoint'] = str(np.array(datum.handKeypoints[0]).tolist())
-                    keypointdict['right hand keypoint'] = str(np.array(datum.handKeypoints[1]).tolist())
+                    keypointdict['body keypoint'] = np.array(datum.poseKeypoints).tolist()
+                    keypointdict['Face keypoint'] = np.array(datum.faceKeypoints).tolist()
+                    keypointdict['Left hand keypoint'] = np.array(datum.handKeypoints[0]).tolist()
+                    keypointdict['right hand keypoint'] = np.array(datum.handKeypoints[1]).tolist()
                     keypointlist.append(keypointdict.copy())#must be the copy!!!
                     cv2.imshow("OpenPose 1.5.0 - Tutorial Python API", datum.cvOutputData)
                     cv2.waitKey(1)
